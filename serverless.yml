@@ -1,0 +1,16 @@
+org: akaviles024
+app: node-lambda-1
+service: node-lambda-1a
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /nested
+          method: get
